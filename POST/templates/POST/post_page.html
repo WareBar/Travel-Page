@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+    {{post.topic}} | #Travel
+{% endblock  %}
+
+
+{% block content %}
+    <div class="page-container">
+        <h3>{{post.country}} : {{post.posted_at}}</h3>
+        <div class="page-banner">
+            <img src="{{post.banner.url}}" alt="{{post.topic}}">
+        </div>
+        <p>{{post.content}}</p>
+    </div>
+{% endblock  %}

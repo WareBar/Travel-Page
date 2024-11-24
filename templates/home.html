@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+    Post | #Travel
+{% endblock  %}
+
+
+{% block content %}
+    <div class="card-container">
+        {% for post in posts %}
+        <div class="card">
+            <div class="banner-container">
+                <img src="{{post.banner.url}}" alt="photo of card">
+            </div>
+            {% comment %} <a href="#">{{post.topic}}</a> {% endcomment %}
+            <h3>{{post.topic}}</h3>
+            <p>
+                <a href="{% url 'POST:PAGE' slug=post.slug %}">Read More</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock  %}
